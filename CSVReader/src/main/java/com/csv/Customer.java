@@ -132,6 +132,7 @@ public class Customer {
 	public void setLocation(String location) {
 		this.location = location;
 	}
+	
 	@Override
 	 public boolean equals(Object obj){
 	  if (this == obj){
@@ -147,6 +148,7 @@ public class Customer {
 	   return true;
 	  } 
 	 }
+	
 	 @Override
 	 public String toString() {
 	  return "Customer [id=" 

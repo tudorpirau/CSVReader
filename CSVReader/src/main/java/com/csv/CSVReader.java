@@ -19,12 +19,19 @@ import org.slf4j.LoggerFactory;
 public class CSVReader {
 
 	CSVParser csvParser;
+	
 	int badRecords=0, goodRecords=0;
+	
 	String CSV_FILE;
+	
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	
     public String createParser(CustomerRepository customerRepository, String path) {
+    	
     	int size=0;
+    	
     	List<CSVRecord> records;
+    	
         try {
            Reader reader = Files.newBufferedReader(Paths.get(path));
            csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
@@ -33,15 +40,21 @@ public class CSVReader {
            size=records.size();
            
         } catch (IOException e){
+        	
           return "Error reading file in selected directory. "
         		 + "Check if file exists and has the correct format.";
+          
         }
         if (size>0) {
+        	
         	ArrayList<Customer> list=new ArrayList<Customer>();
         	ArrayList<CSVRecord> badRecordsList=new ArrayList<CSVRecord>();
+        	
             for (int j=1;j<records.size(); j++) {
+            	
             	CSVRecord csvRecord=records.get(j);
             	if (checkRecordData(csvRecord)) {
+            		
                 Customer customer=new Customer();
                 customer.setFirstName(addQuotes(csvRecord.get(0)));
                 customer.setLastName(addQuotes(csvRecord.get(1)));
@@ -55,17 +68,22 @@ public class CSVReader {
                 customer.setLocation(addQuotes(csvRecord.get(9)));
                 list.add(customer);
                 goodRecords++;
+                
             	} else {
+            		
             	badRecords++;
             	badRecordsList.add(csvRecord);
+            	
             	}
             }
             customerRepository.saveAll(list);
+            
             Thread thread=new Thread(new Runnable() {
             	public void run() {
             	saveBadRecords(badRecordsList);
             	}
             });
+            
             thread.start();
             closeParser();
             StringBuilder sb=new StringBuilder();
@@ -81,9 +99,12 @@ public class CSVReader {
             sb.append(".");
             LOGGER.info(sb.toString());
             return sb.toString();
+            
         } else {
+        	
         	closeParser();
         	return "No data found in the selected file.";
+        	
         }
     }
     public void closeParser() {
@@ -102,8 +123,10 @@ public class CSVReader {
     	return true;
     }
     public void saveBadRecords(ArrayList<CSVRecord> list) {
+    	
     		CSVPrinter csvPrinter=null;
     		try {
+    			
                 BufferedWriter writer = Files.newBufferedWriter(Paths.get(CSV_FILE));
     			
                 csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
@@ -123,12 +146,15 @@ public class CSVReader {
     		
     	}
     public void getDirectory(String path) {
+    	
     	String directory=Paths.get(path).getParent().toString();
         Date date = new Date();
         String strDate = new SimpleDateFormat("yyyy-MM-dd").format(date);
         CSV_FILE=directory+"\\"+"bad-data "+strDate+".csv";
+        
     	}
     public String addQuotes(String s) {
+    	
     	if (s.contains(",")) {
     		return "\""+s+"\"";
     		} else {
