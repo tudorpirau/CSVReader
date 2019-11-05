@@ -1,5 +1,5 @@
 <br>
-1. Presentation.
+1. Presentation.<br>
 This is a simple application which is reading data from a CSV file. Data is filtered, in order to get ride of bad records and then imported to SQL Lite in memory database. Bad records are exported in a new file.
 <br>
 2.Used technologies.
