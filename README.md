@@ -1,8 +1,10 @@
 # CSVReader
 1. Presentation.
+
 This is a simple application which is reading data from a CSV file. Data is filtered, in order to get ride of bad records and then imported to SQL Lite in memory database. Bad records are exported in a new file.
 
 2.Used technologies.
+
 Spring Boot, Hibernate, Maven. For importing CSV data is used a library from Apache. Data is inserted in a database using a Hibernate Entity. It is used a batch insert to improve the performance as there are very many records in CSV file.
 
 3. Steps to set up and run the project.
@@ -10,6 +12,7 @@ Spring Boot, Hibernate, Maven. For importing CSV data is used a library from Apa
 To set up and run this project it is required to install Spring Tool Suite or Eclipse. To run one of these you need Java development Kit installed on your machine. Next, it is neccessary to clone this repository in your IDE and then to import this project. Make sure all maven dependecies are updated in your project. The database details are located in application.properties file. You can change username and password for your database there. Now, you can run it. Open your browser and go to index, will be opened the web page of the application. There you have to input directory where you CSV file is located and after clicking submit, you will see a brief status of imported data. In the case you CSV file is corrupt or is located in a different location, you will see an error message.
 
 4. Screenshots:
+
 https://imgur.com/Quhmu6H
 https://imgur.com/pkhUvv2
 
