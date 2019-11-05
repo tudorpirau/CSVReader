@@ -1,4 +1,4 @@
-# CSVReader
+<br>
 1. Presentation.
 This is a simple application which is reading data from a CSV file. Data is filtered, in order to get ride of bad records and then imported to SQL Lite in memory database. Bad records are exported in a new file.
 <br>
@@ -13,6 +13,7 @@ To set up and run this project it is required to install Spring Tool Suite or Ec
 4. Screenshots:
 <br>
 https://imgur.com/Quhmu6H
+<br>
 https://imgur.com/pkhUvv2
 <br>
 5. Maven dependencies:
