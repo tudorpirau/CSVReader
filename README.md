@@ -1,6 +1,5 @@
 # CSVReader
 1. Presentation.
-<br>
 This is a simple application which is reading data from a CSV file. Data is filtered, in order to get ride of bad records and then imported to SQL Lite in memory database. Bad records are exported in a new file.
 <br>
 2.Used technologies.
@@ -27,65 +26,65 @@ https://imgur.com/pkhUvv2
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
-
+<br>
 <!-- Dependencies for Hibernate and ORM  -->  
 <dependency>
 <groupId>org.xerial</groupId>
 <artifactId>sqlite-jdbc</artifactId>
 <version>3.25.2</version>
 </dependency>
-
+<br>
 <dependency>
 <groupId>com.h2database</groupId>
 <artifactId>h2</artifactId>
 <version>1.3.156</version>
 </dependency>
-
+<br>
 <dependency>
 <groupId>org.springframework</groupId>
 <artifactId>spring-orm</artifactId>
 </dependency>
-
+<br>
 <dependency>
 <groupId>org.hibernate</groupId>
 <artifactId>hibernate-entitymanager</artifactId>
 <version>3.6.0.Final</version>
 </dependency>
-
+<br>
 <dependency>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-data-jpa</artifactId>
 </dependency>
-
+<br>
 <!-- Dependencies for SQLite -->
 <dependency>
 <groupId>org.xerial</groupId>
 <artifactId>sqlite-jdbc</artifactId>
 <version>3.8.11.2</version>
 </dependency>
-
+<br>
 <dependency>
 <groupId>net.kemitix</groupId>
 <artifactId>sqlite-dialect</artifactId>
 <version>0.1.0</version>
 </dependency>  
-		  
+<br>	  
 <dependency>
 <groupId>log4j</groupId>
 <artifactId>log4j</artifactId>
 <version>1.2.16</version>
 </dependency>
-
+<br>
 <dependency>
 <groupId>org.apache.commons</groupId>
 <artifactId>commons-csv</artifactId>
 <version>1.5</version>
 </dependency>
-		
+<br>		
 <dependency>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-test</artifactId>
 <scope>test</scope>
 </dependency>
-
+<br>
 Good luck!
