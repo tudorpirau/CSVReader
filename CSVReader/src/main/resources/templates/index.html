@@ -91,7 +91,9 @@
 function getfolder(e) {
 	
 var directory=document.getElementById('directory').value;
+
 document.getElementById("submitFile").setAttribute("disabled","true");
+
 if (directory==""||directory==" "){
 	//default location
 	var directory="C:\\";
@@ -105,13 +107,14 @@ xhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 		 showModal(this.responseText);
 		 document.getElementById("submitFile").removeAttribute("disabled");
-	  }
-	};
+	}
+};
 	xhttp.open("POST", "/import", true);
 	xhttp.setRequestHeader("Content-Type", "text/plain");
 	xhttp.send(directory);
 }
 function showModal(content){
+	
 	var modal = document.getElementById("myModal");
 	modal.style.display = "none";
 	document.getElementById("content").innerHTML=content;
@@ -136,7 +139,6 @@ function showModal(content){
 </div>
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
@@ -149,7 +151,6 @@ function showModal(content){
     <div class="modal-footer">
     </div>
   </div>
-
 </div>
 </body>
 </html>
