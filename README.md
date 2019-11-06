@@ -10,18 +10,20 @@
 <img src="https://imgur.com/pkhUvv2.png"
      style="float: left; margin-right: 10px;" />
 <h1>5. Maven dependencies:</h1>
-<br>
+1.
 <p>
 <dependency>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
 </p>
-<br>
+2.
+<p>
 <dependency>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
+</p>
 <br>
 <!-- Dependencies for Hibernate and ORM  -->  
 <dependency>
