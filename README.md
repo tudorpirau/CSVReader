@@ -1,15 +1,12 @@
 <h1>1. Presentation.</h1>
 <p>This is a simple application which is reading data from a CSV file. Data is filtered, in order to get ride of bad records and then imported to SQL Lite in memory database. Bad records are exported in a new file.</p>
-<h1>2.Used technologies.</h1>
+<h1>2. Used technologies.</h1>
 <p>Spring Boot, Hibernate, Maven. For importing CSV data is used a library from Apache. Data is inserted in a database using a Hibernate Entity. It is used a batch insert to improve the performance as there are very many records in CSV file.</p>
 <h1>3. Steps to set up and run the project.</h1>
 <p>To set up and run this project it is required to install Spring Tool Suite or Eclipse. To run one of these you need Java development Kit installed on your machine. Next, it is neccessary to clone this repository in your IDE and then to import this project. Make sure all maven dependecies are updated in your project. The database details are located in application.properties file. You can change username and password for your database there. Now, you can run it. Open your browser and go to index, will be opened the web page of the application. There you have to input directory where you CSV file is located and after clicking submit, you will see a brief status of imported data. In the case you CSV file is corrupt or is located in a different location, you will see an error message.</p>
 <h1>4. Screenshots:</h1>
-<br>
-https://imgur.com/Quhmu6H
-<br>
-https://imgur.com/pkhUvv2
-<br>
+<img>https://imgur.com/Quhmu6H.png</img>
+<img>https://imgur.com/pkhUvv2.png</img>
 <h1>5. Maven dependencies:</h1>
 <br>
 <dependency>
