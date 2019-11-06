@@ -5,8 +5,8 @@
 <h1>3. Steps to set up and run the project.</h1>
 <p>To set up and run this project it is required to install Spring Tool Suite or Eclipse. To run one of these you need Java development Kit installed on your machine. Next, it is neccessary to clone this repository in your IDE and then to import this project. Make sure all maven dependecies are updated in your project. The database details are located in application.properties file. You can change username and password for your database there. Now, you can run it. Open your browser and go to index, will be opened the web page of the application. There you have to input directory where you CSV file is located and after clicking submit, you will see a brief status of imported data. In the case you CSV file is corrupt or is located in a different location, you will see an error message.</p>
 <h1>4. Screenshots:</h1>
-<img>https://imgur.com/Quhmu6H.png</img>
-<img>https://imgur.com/pkhUvv2.png</img>
+![alt text](https://imgur.com/Quhmu6H.png)
+![alt text](https://imgur.com/pkhUvv2.png)
 <h1>5. Maven dependencies:</h1>
 <br>
 <dependency>
