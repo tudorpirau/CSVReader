@@ -11,10 +11,12 @@
      style="float: left; margin-right: 10px;" />
 <h1>5. Maven dependencies:</h1>
 <br>
+<p>
 <dependency>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
+</p>
 <br>
 <dependency>
 <groupId>org.springframework.boot</groupId>
