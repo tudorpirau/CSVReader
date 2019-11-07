@@ -18,17 +18,17 @@
 	</properties>
 	<dependencies>
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            		<groupId>org.springframework.boot</groupId>
+            		<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency> 
 		<dependency>
-    		<groupId>org.xerial</groupId>
-    		<artifactId>sqlite-jdbc</artifactId>
-    		<version>3.25.2</version>
+    			<groupId>org.xerial</groupId>
+    			<artifactId>sqlite-jdbc</artifactId>
+    			<version>3.25.2</version>
 		</dependency>
   		<dependency>
    			<groupId>com.h2database</groupId>
@@ -45,9 +45,9 @@
    			<version>3.6.0.Final</version>
   		</dependency>
 		<dependency>
-        	<groupId>org.springframework.boot</groupId>
-        	<artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+        		<groupId>org.springframework.boot</groupId>
+        		<artifactId>spring-boot-starter-data-jpa</artifactId>
+        	</dependency>
   		<dependency>
    			<groupId>org.xerial</groupId>
    			<artifactId>sqlite-jdbc</artifactId>
@@ -64,9 +64,9 @@
 		   	<version>1.2.16</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.apache.commons</groupId>
-    		<artifactId>commons-csv</artifactId>
-    		<version>1.5</version>
+    			<groupId>org.apache.commons</groupId>
+    			<artifactId>commons-csv</artifactId>
+    			<version>1.5</version>
 		</dependency>
 		
 		<dependency>
