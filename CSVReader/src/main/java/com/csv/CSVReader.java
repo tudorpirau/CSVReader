@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 @Component
 public class CSVReader {
-
+ 
 	CSVParser csvParser;
 	
 	int badRecords=0, goodRecords=0;
@@ -77,28 +77,11 @@ public class CSVReader {
             	}
             }
             customerRepository.saveAll(list);
-            
-            Thread thread=new Thread(new Runnable() {
-            	public void run() {
-            	saveBadRecords(badRecordsList);
-            	}
-            });
-            
-            thread.start();
+            saveBadRecords(badRecordsList);
             closeParser();
-            StringBuilder sb=new StringBuilder();
-            sb.append("Data was imported successfully.");
-            sb.append("<br>Count of records received: ");
-            sb.append(goodRecords+badRecords);
-            sb.append(".");
-            sb.append("<br>Count of records successful: ");
-            sb.append(goodRecords);
-            sb.append(".");
-            sb.append("<br>Count of records failed: ");
-            sb.append(badRecords);
-            sb.append(".");
-            LOGGER.info(sb.toString());
-            return sb.toString();
+            String status=getStatus(goodRecords, badRecords);
+            LOGGER.info(status);
+            return status;
             
         } else {
         	
@@ -124,6 +107,8 @@ public class CSVReader {
     }
     public void saveBadRecords(ArrayList<CSVRecord> list) {
     	
+	    	Thread thread=new Thread(new Runnable() {
+	        public void run() {
     		CSVPrinter csvPrinter=null;
     		try {
     			
@@ -133,18 +118,22 @@ public class CSVReader {
                         .withHeader("A", "B", "C", "D", "E", "F", "G", "H", "I", "J"));
 
             		for (int i=0; i<list.size(); i++) {
-                    csvPrinter.printRecord(list.get(i));
+            			csvPrinter.printRecord(list.get(i));
             		}
                     csvPrinter.flush();     
                     csvPrinter.close();
             	
-    		} catch (IOException e){
+    			} catch (IOException e){
     			
     			LOGGER.error("Error saving file with bad records.");
             
-            } 
-    		
-    	}
+    			}
+    		   		
+	        }
+	    	});
+	    	
+	    	thread.start();		
+    }
     public void getDirectory(String path) {
     	
     	String directory=Paths.get(path).getParent().toString();
@@ -161,4 +150,18 @@ public class CSVReader {
     		return s;
     		}
     	}
-	}
+    public String getStatus(int goodRecords, int badRecords) {
+    	StringBuilder sb=new StringBuilder();
+        sb.append("Data was imported successfully.");
+        sb.append("<br>Count of records received: ");
+        sb.append(goodRecords+badRecords);
+        sb.append(".");
+        sb.append("<br>Count of records successful: ");
+        sb.append(goodRecords);
+        sb.append(".");
+        sb.append("<br>Count of records failed: ");
+        sb.append(badRecords);
+        sb.append(".");
+        return sb.toString();
+    }
+}
